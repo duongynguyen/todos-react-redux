@@ -1,9 +1,10 @@
 import React from 'react';
+import TaskBoard from "./../TaskBoard";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello Redux-Saga</h1>
+      <TaskBoard />
     </div>
   );
 }
