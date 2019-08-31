@@ -5,17 +5,34 @@ import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import Grid from "@material-ui/core/Grid";
 import { STATUSES } from "../../constants";
+import TaskList from "../../components/TaskList";
 
+const listTask = [
+  {
+    id: 1,
+    title: "Read book",
+    status: 0,
+    description: "Read book des"
+  },
+  {
+    id: 2,
+    title: "Coding",
+    status: 1,
+    description: "Coding des"
+  },
+  {
+    id: 3,
+    title: "Play game",
+    status: 2,
+    description: "Play game des"
+  }
+];
 class TaskBoard extends Component {
   renderBoard() {
     let xhtml = null;
     xhtml = (
       <Grid container spacing={5}>
-        {STATUSES.map((status, index) => (
-          <Grid item md={4} xs={12} key={index}>
-            {status.label}
-          </Grid>
-        ))}
+        {STATUSES.map((status, index) => <TaskList status={status} listTask={listTask} key={index}/>)}
       </Grid>
     );
     return xhtml;
