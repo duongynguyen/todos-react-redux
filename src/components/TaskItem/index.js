@@ -13,8 +13,8 @@ class TaskItem extends Component {
     const { status, tasks } = this.props;
     return tasks
       .filter(task => task.status === status.value)
-      .map(task => (
-        <Card style={{ marginBottom: "8px" }}>
+      .map((task, index) => (
+        <Card style={{ marginBottom: "8px" }} key={index}>
           <CardContent>
             <Grid container justify="space-between">
               <Grid item>

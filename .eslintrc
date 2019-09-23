@@ -1,0 +1,38 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "airbnb",
+    "prettier"
+  ],
+  "rules": {
+    "react/prop-types": "warn",
+    "react/jsx-max-props-per-line": "warn",
+    "import/no-extraneous-dependencies": "off",
+    "react/jsx-filename-extension": "off",
+    "react/require-default-props": "off",
+    "react/prefer-stateless-function": "off",
+    "no-unused-vars": "warn",
+    "import/extensions": "off",
+    "import/order": "warn",
+    "no-use-before-define": "off",
+    "no-param-reassign": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-uses-vars": "error",
+    "prettier/prettier": ["error"]
+  },
+  "plugins": ["prettier"],
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  }
+}
