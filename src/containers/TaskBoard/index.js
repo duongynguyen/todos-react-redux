@@ -25,7 +25,6 @@ class TaskBoard extends Component {
 
   renderBoard() {
     const { listTask } = this.props;
-    console.log(listTask)
     let xhtml = null;
     xhtml = (
       <Grid container spacing={5}>
