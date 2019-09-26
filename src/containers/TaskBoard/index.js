@@ -1,16 +1,17 @@
 import React, { Component } from "react";
 import { withStyles } from "@material-ui/styles";
-import styles from "./styles";
 import Button from "@material-ui/core/Button";
 import Icon from "@material-ui/core/Icon";
 import Grid from "@material-ui/core/Grid";
+import { PropTypes } from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 import { STATUSES } from "../../constants";
 import TaskList from "../../components/TaskList";
 import TaskForm from "../../components/TaskForm";
-import { connect } from "react-redux";
-import { bindActionCreators } from "redux";
 import * as taskActions from "../../actions/task";
-import { PropTypes } from "prop-types";
+import SearchBox from "../../components/SearchBox";
+import styles from "./styles";
 
 class TaskBoard extends Component {
   state = {
@@ -50,6 +51,16 @@ class TaskBoard extends Component {
     this.setState({ open: true });
   };
 
+  handleFilter = e => {
+    // const
+  }
+
+  renderSearchBox() {
+    let xhtml = null;
+    xhtml = <SearchBox handleChange={this.handleFilter}/>;
+    return xhtml;
+  }
+
   render() {
     const { classes } = this.props;
     return (
@@ -62,6 +73,7 @@ class TaskBoard extends Component {
         >
           <Icon className={classes.icon}>add</Icon> Add new task
         </Button>
+        {this.renderSearchBox()}
         {this.renderBoard()}
         {this.renderForm()}
       </div>
@@ -79,7 +91,7 @@ TaskBoard.propTypes = {
 const mapStateToProps = state => {
   return {
     listTask: state.tasks.listTask
-  }
+  };
 };
 
 const mapDispatchToProps = dispatch => {

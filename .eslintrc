@@ -27,7 +27,10 @@
     "no-param-reassign": "off",
     "import/prefer-default-export": "off",
     "react/jsx-uses-vars": "error",
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "react/forbid-prop-types": "off",
+    "class-methods-use-this": "off",
+    "no-case-declarations": "off"
   },
   "plugins": ["prettier"],
   "env": {
